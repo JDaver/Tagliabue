@@ -106,24 +106,24 @@ include_once "server/connection.php";
             }
 
               //BUTTON 
-              output_element = "<button  onclick='sendPage(1,\""+searchString+"\")'>Primo</button>";
+              outputBTN = "<button  onclick='sendPage(1,\""+searchString+"\")'>Primo</button>";
                     
                     for(i=1;i<=total_pages_default;i++){
                        if(total_pages_default>10){
                            if((i>=data_value -4) && (i <=data_value + 4)){
-                            output_element += "<button onclick='sendPage("+i+",\""+searchString+"\")'>" + i + "</button>";
+                            outputBTN += "<button onclick='sendPage("+i+",\""+searchString+"\")'>" + i + "</button>";
                        }
                        }else{
-                        output_element += "<button onclick='sendPage("+i+",\""+searchString+"\")'>" + i + "</button>";
+                        outputBTN += "<button onclick='sendPage("+i+",\""+searchString+"\")'>" + i + "</button>";
                        }
                    }
-                   output_element += "<button onclick='sendPage("+total_pages_default+",\""+searchString+"\")'>ultimo</button>";
+                   outputBTN += "<button onclick='sendPage("+total_pages_default+",\""+searchString+"\")'>ultimo</button>";
             }            
             
 
             table += '</tbody></table>';
             document.getElementById('response').innerHTML = table;
-            document.getElementById('buttons').innerHTML = output_element;
+            document.getElementById('buttons').innerHTML = outputBTN;
         }
 
        
