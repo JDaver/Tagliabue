@@ -17,7 +17,7 @@ if ($stmt_id->num_rows > 0) {
 echo $newReceipt;
     $_SESSION['name']=$newReceipt;
 if(isset($_SESSION['name'])){
-header("Location: ..//receipt.php");
+header("Location: ../receipt.php");
 exit();
 }else{
 header("Location: warning.php");
