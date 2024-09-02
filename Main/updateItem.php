@@ -65,45 +65,6 @@ $stock = (int)$result_array['stock'];
                 <button class="back-btn"><a href="index.php">Torna alla Home</a></button>
                 <button class="confirm-btn" type="submit" name="invio">Modifica</button>
             </div>
-    <?php include_once "server/header.php" ?>
-
-    <main class="mb">
-        <h2 class="title">Articolo: <?php echo $ean; ?> </h2>
-        <form action="server/update_script.php" method="post" class="form">
-            <div class="flex">
-                <div class="col">
-                    <div class="col gap-sm">
-                        <label for="descrizione">Descrizione</label>
-                        <input class="form__input" id="descrizione" type="text" name="descrizione" value="<?php echo $result_array['descrizione']; ?>">
-                    </div>
-                    <div class="col gap-sm">
-                        <label for="marca">Marca</label>
-                        <input class="form__input" id="marca" type="text" name="marca" value="<?php echo $result_array['marca']; ?>">
-                    </div>
-                    <div class="col gap-sm">
-                        <label for="stock">Stock</label>
-                        <input class="form__input" id="stock" type="number" step="1" min="0" max="999" name="stock" value="<?php echo $stock; ?>" placeholder=" <?php echo $stock; ?>">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="col gap-sm">
-                        <label for="prezzoVendita">Prezzo di Vendita</label>
-                        <input class="form__input" id="prezzoVendita" type="number" step="0.01" min="0" max="999" name="prezzoVendita" value="<?php echo $result_array['prezzoVendita']; ?>" placeholder="<?php echo $result_array['prezzoVendita']; ?>">
-                    </div>
-                    <div class="col gap-sm">
-                        <label for="prezzoAcquisto">Prezzo di Acquisto</label>
-                        <input class="form__input" id="prezzoAcquisto" type="number" step="0.01" min="0" max="999" name="prezzoAcquisto" value="<?php echo $result_array['prezzoAcquisto']; ?>" placeholder="<?php echo $result_array['prezzoAcquisto']; ?>">
-                    </div>
-                    <div class="col gap-sm">
-                        <label for="ean">Codice EAN</label>
-                        <input class="form__input" disabled id="ean" type="text" name="ean" value="<?php echo $result_array['ean'] ?>">
-                    </div>
-                </div>
-            </div>
-            <div class="btns-wrapper gap-lg">
-                <button class="back-btn"><a href="index.php">Torna alla Home</a></button>
-                <button class="confirm-btn" type="submit" name="invio">Modifica</button>
-            </div>
         </form>
     </main>
     <script src="" async defer></script>
