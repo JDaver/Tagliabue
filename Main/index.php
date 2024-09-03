@@ -67,11 +67,11 @@ include_once "server/connection.php";
         sendPage(<?php echo $current_page . ",'" . $ricerca . "'" ?>);
 
         function sendPage(data_value, searchString) {
-            var total_pages_default = <?php echo $total_pages_default ?>;
+            let numero_pagina;
+            let total_pages_default = <?php echo $total_pages_default ?>;
 
-            //var valore = document.getElementById('last').getAttribute('data-value');
             console.log(valore, searchString);
-            var xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
 
             xhr.open('POST', 'server/pagination.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -132,16 +132,16 @@ include_once "server/connection.php";
 
 
             // Dati da inviare
-            var valore = data_value || 1;
-            var dati = "val=" + valore;
-            var ricerca = "ricerca=" + searchString;
+            numero_pagina = data_value || 1;
+            let dati = "val=" + valore;
+            let ricerca = "ricerca=" + searchString;
 
 
-            var parameters = [dati];
+            const parameters = [dati];
 
             if (searchString) {
 
-                var type = "type=" + document.getElementById('type').value;
+                let type = "type=" + document.getElementById('type').value;
                 parameters.push(ricerca, 'cerca=1', type);
             }
 
