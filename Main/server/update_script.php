@@ -9,7 +9,8 @@ if(isset($_POST['invio'])){
     $prezzoVendita =$_POST['prezzoVendita'];
     $prezzoAcquisto = $_POST['prezzoAcquisto'];
 
-    $query = "UPDATE articoli SET descrizione = '$descrizione', marca = '$marca', stock = '$stock', prezzoVendita = '$prezzoVendita',prezzoAcquisto = '$prezzoAcquisto' WHERE ean ='$ean'";
+    $query = "UPDATE articoli SET descrizione = '$descrizione', marca = '$marca', stock = $stock, prezzoVendita = '$prezzoVendita',prezzoAcquisto = '$prezzoAcquisto' WHERE ean ='$ean'";
+    $connection->query($query);
     if($connection->query($query)){
         echo "<script>
         alert('Articolo modificato con successo');
