@@ -72,7 +72,6 @@ if (isset($_POST['conclusion'])) {
         $query_nuovo_scontrino = "INSERT INTO receipt (id_scontrino,tot_fattura,data_fattura) VALUES (" . $_SESSION['name'] . "," . totale_carrello() . ",NOW())";
         if ($connection->query($query_nuovo_scontrino)) {
             $messagedisplay = "<h3>Scontrino emesso Correttamente</h3>";
-            //var_dump($_SESSION['name']);
             //compilazione della tabella di join
             $query_nuovo_jointab = "INSERT INTO receipt_articolo (quantita_articolo,id_scontrino,ean) VALUES (?,?,?)";
             foreach ($_SESSION['carrello'] as $index) {
@@ -101,7 +100,6 @@ if (isset($_POST['conclusion'])) {
             }
 
             session_destroy();
-            //header("location: index.php");
             echo "<script>
         alert('Scontrino Emesso Correttamente!');
         window.location.href = 'index.php';

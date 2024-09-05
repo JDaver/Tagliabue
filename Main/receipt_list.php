@@ -74,12 +74,10 @@ include_once "server/connection.php";
 
 
         function sendPage(page_value, date_value, order_value) {
-            var total_pages_receipt = <?php echo $total_pages_receipt ?>;
+            let total_pages_receipt = <?php echo $total_pages_receipt ?>;
 
 
-            //var valore = document.getElementById('last').getAttribute('data-value');
-
-            var xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
 
             xhr.open('POST', 'server/paginationReceipt.php', true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -97,16 +95,16 @@ include_once "server/connection.php";
             }
 
             xhr.onload = function() {
-                var table = '<table class="table receiptList"><thead><tr><th>id scontrino</th><th>totale fattura </th><th>data fattura</th><th></th></thead><tbody>';
-                var json_response = this.responseText;
+                let table = '<table class="table receiptList"><thead><tr><th>id scontrino</th><th>totale fattura </th><th>data fattura</th><th></th></thead><tbody>';
+                const json_response = this.responseText;
 
 
 
                 if (json_response == "InternalError") {
                     table += "<td>Nessun Record Trovato</td>"
                 } else {
-                    var dates = JSON.parse(json_response);
-                    for (var i = 0; i < dates.length; i++) {
+                    let dates = JSON.parse(json_response);
+                    for (let i = 0; i < dates.length; i++) {
 
 
                         table += '<tr>';
@@ -143,13 +141,13 @@ include_once "server/connection.php";
 
 
             // Dati da inviare
-            var page_preparing = page_value || 1;
+            let page_preparing = page_value || 1;
 
-            var page = "val=" + page_preparing;
-            var data_aggiornata = "data=" + date_value;
-            var order = "ordine=" + order_value;
+            let page = "val=" + page_preparing;
+            let data_aggiornata = "data=" + date_value;
+            let order = "ordine=" + order_value;
 
-            var parameters = [page, data_aggiornata, order];
+            const parameters = [page, data_aggiornata, order];
 
 
             console.log(parameters);
