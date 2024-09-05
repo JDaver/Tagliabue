@@ -15,3 +15,4 @@ here some preview of the actual project:
 ![](./Main/images/Presentation/Preview_receipt.png)
 
 ![](./Main/images/Presentation/Preview_receiptList.png)
+

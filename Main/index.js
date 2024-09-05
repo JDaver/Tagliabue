@@ -1,8 +1,5 @@
 const tabButtons = document.querySelectorAll('.tab__btn');
 const tabContent = document.querySelectorAll('.content');
-const searchBtn = document.querySelector('.search__btn')
-
-// disabilitare funzionalità ricerca se tabella in esaurimento è attiva 
 
 tabButtons.forEach((tab, index) => {
     tab.addEventListener('click', () => {
