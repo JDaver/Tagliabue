@@ -67,10 +67,10 @@ include_once "server/connection.php";
         sendPage(<?php echo $current_page . ",'" . $ricerca . "'" ?>);
 
         function sendPage(data_value, searchString) {
-            let numero_pagina;
+            const numero_pagina = data_value || 1;
             let total_pages_default = <?php echo $total_pages_default ?>;
 
-            console.log(valore, searchString);
+            //console.log(valore, searchString);
             let xhr = new XMLHttpRequest();
 
             xhr.open('POST', 'server/pagination.php', true);
@@ -132,8 +132,7 @@ include_once "server/connection.php";
 
 
             // Dati da inviare
-            numero_pagina = data_value || 1;
-            let dati = "val=" + valore;
+            let dati = "val=" + numero_pagina;
             let ricerca = "ricerca=" + searchString;
 
 
