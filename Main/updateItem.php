@@ -57,6 +57,7 @@ $stock = (int)$result_array['stock'];
                     <div class="col gap-sm">
                         <label for="ean">Codice EAN</label>
                         <input class="form__input" disabled id="ean" type="text" name="ean" value="<?php echo $result_array['ean'] ?>">
+                        <input type="hidden" name='ean' value="<?php echo $result_array['ean'] ?>">
                     </div>
                 </div>
             </div>
