@@ -1,3 +1,6 @@
+<head>
+<link rel="icon" type="image/png" href="images/logo-icon.png"> 
+</head>
 <header class="header">
     <div>
         <a href="index.php"><img src="images\logo-1675765616.png" alt="Logo"></a>
